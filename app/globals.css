@@ -2323,7 +2323,7 @@ html {
 
 /* Footer Styles */
 .bg-very-light-gray {
-  background-color: #f5f7fa;
+  background-color: #f8fafc;
 }
 
 .background-position-center-top {
@@ -2336,6 +2336,7 @@ html {
   position: relative;
   width: 100%;
   margin-top: 0;
+  background-color: #f8fafc;
 }
 
 .pb-30px {
@@ -2349,6 +2350,12 @@ html {
 .overlap-section {
   position: relative;
   z-index: 10;
+}
+
+.overlap-section > div {
+  background: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid rgba(37, 99, 235, 0.1) !important;
 }
 
 .border-radius-100px {
@@ -2434,28 +2441,31 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  gap: 24px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px 0;
 }
 
 .client-box {
   display: inline-block;
-  padding: 15px;
-  border: 2px solid rgba(37, 99, 235, 0.2);
-  border-radius: 8px;
-  background: white;
+  padding: 20px;
+  border: 2px solid rgba(37, 99, 235, 0.15);
+  border-radius: 12px;
+  background: #ffffff;
   transition: all 0.3s ease;
-  height: 100px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .client-box:hover {
-  border-color: rgba(37, 99, 235, 0.5);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+  transform: translateY(-4px);
+  background: #ffffff;
 }
 
 .trust-logo-img {
@@ -2471,25 +2481,27 @@ html {
 }
 
 .footer-dark {
-  background-color: #1e293b;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-top: 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 60px;
   width: 100%;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .border-color-transparent-white-light {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .fs-15 {
   font-size: 15px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
 }
 
 .text-sm-start {
@@ -2793,6 +2805,149 @@ html {
 
 @media (max-width: 991px) {
   .comparison-row {
+    margin-left: 0 !important;
+  }
+}
+
+/* FlexiTask Section - Spacing and Content Size */
+.flexitask-header-section {
+  padding-top: 150px !important;
+  padding-bottom: 150px !important;
+}
+
+.flexitask-header-row {
+  margin-left: 290px !important;
+  max-width: calc(100% - 290px) !important;
+}
+
+.flexitask-header-content {
+  max-width: 85% !important;
+  margin: 0 auto !important;
+}
+
+.flexitask-title {
+  font-size: 2.75rem !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  margin-left: -100px !important;
+}
+
+.flexitask-header-section .feature-box-content span {
+  font-size: 1.25rem !important;
+}
+
+.flexitask-header-section .feature-box-content p {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+}
+
+.flexitask-header-section .icon-double-large {
+  font-size: 56px !important;
+}
+
+@media (max-width: 1200px) {
+  .flexitask-title {
+    font-size: 2.25rem !important;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .flexitask-header-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+  
+  .flexitask-header-row {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .flexitask-header-content {
+    max-width: 100% !important;
+  }
+  
+  .flexitask-title {
+    font-size: 1.75rem !important;
+  }
+  
+  .flexitask-header-section .feature-box-content span {
+    font-size: 1.1rem !important;
+  }
+  
+  .flexitask-header-section .feature-box-content p {
+    font-size: 1rem !important;
+  }
+}
+
+/* FAQ Badge - Shift right 350px */
+.faq-badge {
+  margin-left: 350px !important;
+}
+
+@media (max-width: 991px) {
+  .faq-badge {
+    margin-left: 0 !important;
+  }
+}
+
+/* Reviews Section Header - Shift right 380px */
+.reviews-header-content {
+  margin-left: 380px !important;
+}
+
+@media (max-width: 991px) {
+  .reviews-header-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Case Studies Section Header - Shift right 200px */
+.casestudies-header {
+  margin-left: 200px !important;
+}
+
+@media (max-width: 991px) {
+  .casestudies-header {
+    margin-left: 0 !important;
+  }
+}
+
+/* Case Studies Navigation Arrows - Shift right 650px, proper circles 50x50 */
+.casestudies-nav-arrows {
+  margin-left: 650px !important;
+}
+
+.casestudy-nav-btn {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  padding: 0 !important;
+}
+
+.casestudy-nav-btn:hover {
+  background-color: #f3f4f6 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.casestudy-nav-btn i {
+  font-size: 14px !important;
+  color: #2563eb !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 991px) {
+  .casestudies-nav-arrows {
     margin-left: 0 !important;
   }
 }

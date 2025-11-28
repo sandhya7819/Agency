@@ -218,7 +218,7 @@ export default function ReviewsSection() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="row justify-content-center mb-3">
-          <div className="col-xl-7 col-lg-7 col-md-10 text-center">
+          <div className="col-xl-7 col-lg-7 col-md-10 text-center reviews-header-content">
             <span className="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">
               4.9/5 Stars | 1000+ Websites Protected
             </span>

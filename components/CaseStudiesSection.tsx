@@ -163,7 +163,7 @@ export default function CaseStudiesSection() {
     <section className="py-20 pb-24 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 casestudies-header">
           <h2 className="text-4xl md:text-5xl font-bold mb-2 text-dark-gray">
             Explore Our Website Maintenance Case Studies
           </h2>
@@ -227,17 +227,17 @@ export default function CaseStudiesSection() {
         </div>
 
         {/* Navigation Arrows - Below */}
-        <div className="flex justify-center items-center mt-8 gap-4">
+        <div className="flex justify-center items-center mt-8 gap-4 casestudies-nav-arrows">
           <button
             onClick={scrollLeft}
-            className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
+            className="casestudy-nav-btn"
             aria-label="Previous case study"
           >
             <i className="fas fa-chevron-left text-base-color"></i>
           </button>
           <button
             onClick={scrollRight}
-            className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
+            className="casestudy-nav-btn"
             aria-label="Next case study"
           >
             <i className="fas fa-chevron-right text-base-color"></i>

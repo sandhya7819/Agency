@@ -2,15 +2,15 @@
 
 export default function FlexiTaskSection() {
   return (
-    <section>
+    <section className="flexitask-header-section">
       <div className="container">
-        <div className="row justify-content-center mb-3">
-          <div className="col-12 col-lg-6 text-center">
+        <div className="row justify-content-center mb-3 flexitask-header-row">
+          <div className="col-12 col-lg-6 text-center flexitask-header-content">
             <span className="ps-25px pe-25px mb-15px text-uppercase text-base-color fs-12 lh-40 fw-700 border-radius-100px bg-solitude-blue d-inline-flex">
               <i className="bi bi-currency-rupee fs-16 me-5px"></i>
               Pay only for what you need
             </span>
-            <h2 className="alt-font text-dark-gray fw-800">
+            <h2 className="alt-font text-dark-gray fw-800 flexitask-title">
               Try <em><span className="fw-800">FlexiTask</span></em> Website Maintenance Services
             </h2>
           </div>

@@ -112,9 +112,11 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="container footer-dark text-center text-sm-start mx-auto px-4">
-        <div className="row align-items-center footer-bottom border-top border-color-transparent-white-light pt-30px g-0">
+        <div className="row align-items-center footer-bottom border-top border-color-transparent-white-light pt-30px pb-30px g-0">
           <div className="col-lg-12 text-center md-mb-10px">
-            <p className="fs-15 mb-0">© 2025. Aarav Infotech India Pvt. Ltd., All Rights Reserved.</p>
+            <p className="fs-15 mb-0" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+              © 2025. Aarav Infotech India Pvt. Ltd., All Rights Reserved.
+            </p>
           </div>
         </div>
       </div>

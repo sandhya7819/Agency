@@ -144,7 +144,7 @@ export default function FAQSection() {
               {/* Content Wrapper - Centered */}
               <div className="faq-content-wrapper" style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
                 {/* Badge */}
-                <div className="bg-base-color d-inline-block mb-15px fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12">
+                <div className="bg-base-color d-inline-block mb-15px fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12 faq-badge">
                   Frequently asked questions
                 </div>
 

@@ -171,6 +171,7 @@ const steps = [
                 <div
                   key={step.id}
                   className={`process-step-item ${index === 0 ? 'active' : ''} ${step.isLast ? 'last-step' : ''}`}
+                  
                 >
                   {/* Timeline Node Circle */}
                   <div
