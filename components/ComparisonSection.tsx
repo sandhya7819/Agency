@@ -97,11 +97,11 @@ export default function ComparisonSection() {
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="row justify-content-center mb-3">
-          <div className="col-12 col-xl-10 col-lg-10 col-md-10 text-center mx-auto">
+          <div className="col-12 col-xl-10 col-lg-10 col-md-10 text-center mx-auto comparison-header-content">
             <h3 className="text-dark-gray fw-700 ls-minus-1px mb-1 text-3xl md:text-4xl lg:text-4xl text-center" style={{ maxWidth: '100%', margin: '0 auto' }}>
               One Solution vs 10+ Tools: Save 86% on Website Care!
             </h3>
-            <div className="text-center mt-4">
+            <div className="flex justify-center md:justify-end mt-4 w-full md:w-auto">
               <span className="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">
                 Increase the Performance of your website by Up To 80% (Saving{' '}
                 <span className="total_yearly_saving_cost">₹1,96,396</span> Per Year)
@@ -111,7 +111,7 @@ export default function ComparisonSection() {
         </div>
 
         {/* Comparison Section */}
-        <div className="row mt-8 relative">
+        <div className="row mt-8 relative comparison-row">
           {/* Left Side - Aarav Infotech Plan (Order First on Desktop) */}
           <div className="col-lg-6 col-12 order-lg-first px-xl-3 px-lg-2">
             <div className="fc-best-plan-compare text-white ml-xl-5 ml-lg-3" style={{ backgroundColor: '#013756' }}>

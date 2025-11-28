@@ -163,16 +163,14 @@ export default function CaseStudiesSection() {
     <section className="py-20 pb-24 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
-          <div className="mb-4 lg:mb-0">
-            <h2 className="text-4xl md:text-5xl font-bold mb-2 text-dark-gray">
-              Explore Our Website Maintenance Case Studies
-            </h2>
-          </div>
-          <div className="text-lg text-gray-600 max-w-md">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-2 text-dark-gray">
+            Explore Our Website Maintenance Case Studies
+          </h2>
+          <div className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
             Success Stories from Website Owners Worldwide. Real Data, Real Transformations.
-          </div>
-        </div>
+              </div>
+            </div>
 
         {/* Horizontal Scrollable Case Studies */}
         <div
@@ -182,7 +180,7 @@ export default function CaseStudiesSection() {
         >
           {caseStudies.map((study, index) => (
             <div
-              key={index}
+                    key={index}
               className="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Website Screenshot */}
@@ -221,26 +219,26 @@ export default function CaseStudiesSection() {
                       </span>
                       <span>{item}</span>
                     </div>
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
+          </div>
           ))}
         </div>
 
         {/* Navigation Arrows - Below */}
-        <div className="flex justify-center mt-4 gap-2">
+        <div className="flex justify-center items-center mt-8 gap-4">
           <button
             onClick={scrollLeft}
-            className="w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition"
-            aria-label="Scroll left"
+            className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
+            aria-label="Previous case study"
           >
             <i className="fas fa-chevron-left text-base-color"></i>
           </button>
           <button
             onClick={scrollRight}
-            className="w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition"
-            aria-label="Scroll right"
+            className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
+            aria-label="Next case study"
           >
             <i className="fas fa-chevron-right text-base-color"></i>
           </button>

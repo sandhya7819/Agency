@@ -4,6 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Website Maintenance Services | Aarav Infotech',
   description: 'Monthly Website Maintenance with 12-Minute Avg Response. Security, updates, speed, and fixes handled by senior engineers.',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 }
 
 export default function RootLayout({
@@ -28,6 +29,10 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.lineicons.com/4.0/lineicons.css"
         />
       </head>
       <body>{children}</body>

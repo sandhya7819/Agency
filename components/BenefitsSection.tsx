@@ -22,9 +22,17 @@ export default function BenefitsSection() {
 
   useEffect(() => {
     const syncHeights = () => {
-      if (leftNavRef.current && rightContentRef.current) {
-        const leftHeight = leftNavRef.current.offsetHeight
-        rightContentRef.current.style.height = `${leftHeight}px`
+      // Only sync heights on desktop (lg breakpoint and above)
+      if (window.innerWidth >= 1024) {
+        if (leftNavRef.current && rightContentRef.current) {
+          const leftHeight = leftNavRef.current.offsetHeight
+          rightContentRef.current.style.height = `${leftHeight}px`
+        }
+      } else {
+        // On mobile/tablet, remove height constraint
+        if (rightContentRef.current) {
+          rightContentRef.current.style.height = 'auto'
+        }
       }
     }
 
@@ -133,7 +141,7 @@ export default function BenefitsSection() {
     <section id="benefits" className="overflow-hidden bg-solitude-blue position-relative explore-section py-16 pb-24">
       {/* Header Section */}
       <div className="container mx-auto px-4">
-        <div className="mb-3 text-center lg:text-left">
+        <div className="mb-3 text-center">
           <h3 className="text-dark-gray font-bold text-3xl md:text-4xl mb-0">
             Never Worry About Website Issues Again with our Website Maintenance Services
           </h3>
@@ -185,7 +193,7 @@ export default function BenefitsSection() {
           </div>
 
           {/* Right Column - Content (Large White Box) */}
-          <div ref={rightContentRef} className="explore-content bg-white rounded-lg p-6 lg:p-8 shadow-sm overflow-y-auto lg:col-span-7">
+          <div ref={rightContentRef} className="explore-content bg-white rounded-lg p-6 lg:p-8 shadow-sm lg:overflow-y-auto lg:col-span-7">
             {Object.keys(tabContents).map((tabId) => {
               const content = tabContents[tabId as keyof typeof tabContents]
               const isActive = activeTab === tabId

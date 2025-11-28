@@ -76,13 +76,13 @@ const steps = [
       const section = sectionRef.current
       const rect = section.getBoundingClientRect()
       const windowHeight = window.innerHeight
-      const sectionTop = rect.top + window.scrollY
-      const sectionHeight = rect.height
       const scrollY = window.scrollY
+      const sectionTop = scrollY + rect.top
+      const sectionHeight = rect.height
 
-      // Calculate when section enters viewport
-      const sectionStart = sectionTop - windowHeight * 0.5
-      const sectionEnd = sectionTop + sectionHeight - windowHeight * 0.5
+      // Calculate when section enters viewport (start animation when section is 30% visible)
+      const sectionStart = sectionTop - windowHeight * 0.7
+      const sectionEnd = sectionTop + sectionHeight - windowHeight * 0.3
       const scrollableDistance = sectionEnd - sectionStart
 
       if (scrollY >= sectionStart && scrollY <= sectionEnd) {
@@ -95,14 +95,16 @@ const steps = [
 
         // Get the process-content element to calculate line height
         const processContent = section.querySelector('.process-content') as HTMLElement
-        if (processContent) {
+        if (processContent && lineRef.current) {
           const contentHeight = processContent.scrollHeight
           const currentHeight = contentHeight * progress
           lineRef.current.style.height = `${currentHeight}px`
         }
       } else if (scrollY < sectionStart) {
         setScrollProgress(0)
-        if (lineRef.current) lineRef.current.style.height = '0px'
+        if (lineRef.current) {
+          lineRef.current.style.height = '0px'
+        }
       } else if (scrollY > sectionEnd) {
         setScrollProgress(1)
         const processContent = section.querySelector('.process-content') as HTMLElement
@@ -113,31 +115,43 @@ const steps = [
       }
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    // Use requestAnimationFrame for smooth animation
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', handleScroll, { passive: true })
     handleScroll() // Initial call
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', handleScroll)
     }
   }, [])
 
   return (
-    <section ref={sectionRef} className="process-section py-16 pb-24 bg-white relative">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} className="process-section py-8 md:py-12 lg:py-16 pb-16 md:pb-20 lg:pb-24 bg-white relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-4">
         <div className="process-inner" style={{ marginLeft: '0px', maxWidth: '100%' }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start relative">
             {/* Left Side - Heading and Intro (Sticky - Always Visible Throughout Section) */}
-            <div className="section-head lg:sticky lg:top-24 lg:self-start" style={{ alignSelf: 'flex-start' }}>
-              <div className="head-left sec-title-spacing">
-                <h3 className="text-dark-gray font-bold mb-10px text-3xl md:text-4xl">
+            <div className="section-head">
+              <div className="head-left sec-title-spacing text-center lg:text-left">
+                <h3 className="text-dark-gray font-bold mb-3 md:mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-4xl leading-tight">
             How Our Website Maintenance Services Works
                 </h3>
-                <p className="mb-4 text-gray-700">
+                <p className="mb-3 md:mb-4 text-sm sm:text-base text-gray-700">
                   <strong>(Onboarding → Monthly Care → Live Monitoring → Reports)</strong>
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-base text-gray-700 leading-relaxed">
                   When you choose us, you're not buying "hours" - you're getting a proven maintenance program that keeps your website fast, secure, and up to date without draining your team. Everything starts with a structured onboarding, followed by ongoing preventive care, on-demand support for updates and fixes, real-time monitoring in your client area, and clear monthly reports that you can share with stakeholders. Whether you select <strong>One Time Fix</strong> or <strong>Monthly Maintenance</strong> in the form above, the outcome is the same: a stable, optimized website with zero guesswork and full transparency.
                 </p>
               </div>
@@ -153,60 +167,76 @@ const steps = [
 
             {/* Process Steps */}
             <div className="tab-content" id="process1">
-              <ul>
-                {steps.map((step, index) => (
-                  <li
-                    key={step.id}
-                    className={index === 0 ? 'active' : ''}
-                    style={step.isLast ? { backgroundColor: '#ebebeb', padding: '24px', borderRadius: '8px' } : {}}
-                  >
-                    {/* Timeline Node Circle */}
-                    <div
-                      className="timeline-node"
-                      style={{
-                        backgroundColor: scrollProgress >= index / steps.length ? '#2563eb' : '#e5e7eb',
-                        borderColor: scrollProgress >= index / steps.length ? '#2563eb' : '#d1d5db',
-                      }}
-                    ></div>
+              {steps.map((step, index) => (
+                <div
+                  key={step.id}
+                  className={`process-step-item ${index === 0 ? 'active' : ''} ${step.isLast ? 'last-step' : ''}`}
+                >
+                  {/* Timeline Node Circle */}
+                  <div
+                    className="timeline-node"
+                    style={{
+                      backgroundColor: scrollProgress >= index / steps.length ? '#2563eb' : '#e5e7eb',
+                      borderColor: scrollProgress >= index / steps.length ? '#2563eb' : '#d1d5db',
+                      '--node-border-color': scrollProgress >= index / steps.length ? '#2563eb' : '#d1d5db',
+                    } as React.CSSProperties & { '--node-border-color': string }}
+                  ></div>
 
-                    {/* Background Number */}
-                    <span className="number">{step.number}</span>
+                  {/* Background Number */}
+                  <span className="number">{step.number}</span>
 
-                    {/* Content */}
-                    <h3 className="box-title mb-5px">{step.title}</h3>
+                  {/* Content */}
+                  <div className="step-content">
+                    {/* Title */}
+                    <div className="step-title-wrapper">
+                      <h3 className="box-title mb-2 md:mb-3 text-lg sm:text-xl md:text-2xl">{step.title}</h3>
+                    </div>
+                    
+                    {/* Subtitle */}
                     {step.subtitle && (
-                      <p className="mb-4">
-                        <strong>
-                          <em>{step.subtitle}</em>
-                        </strong>
-                      </p>
+                      <div className="step-subtitle-wrapper mb-3 md:mb-4">
+                        <p className="text-sm sm:text-base">
+                          <strong>
+                            <em>{step.subtitle}</em>
+                          </strong>
+                        </p>
+                      </div>
                     )}
-                    <div className="text-gray-700 leading-relaxed">
+                    
+                    {/* Description Paragraph */}
+                    <div className="step-description-wrapper mb-3 md:mb-4">
                       <p
-                        className="mb-4"
+                        className="text-gray-700 leading-relaxed text-sm sm:text-base"
                         dangerouslySetInnerHTML={{ __html: step.description }}
                       />
-                      {step.monitoringList && (
-                        <div className="mb-4">
-                          {step.monitoringList.map((item, idx) => (
+                    </div>
+                    
+                    {/* Monitoring List */}
+                    {step.monitoringList && step.monitoringList.length > 0 && (
+                      <div className="step-monitoring-list-wrapper mb-3 md:mb-4">
+                        {step.monitoringList.map((item, idx) => (
+                          <div key={idx} className="step-monitoring-item mb-2">
                             <p
-                              key={idx}
-                              className="mb-2"
+                              className="text-gray-700 leading-relaxed text-sm sm:text-base"
                               dangerouslySetInnerHTML={{ __html: item }}
                             />
-                          ))}
-              </div>
-                      )}
-                      {step.additionalText && (
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    
+                    {/* Additional Text */}
+                    {step.additionalText && (
+                      <div className="step-additional-text-wrapper mb-3 md:mb-4">
                         <p
-                          className="mb-4"
+                          className="text-gray-700 leading-relaxed text-sm sm:text-base"
                           dangerouslySetInnerHTML={{ __html: step.additionalText }}
                         />
-                      )}
-            </div>
-                  </li>
-          ))}
-              </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           </div>

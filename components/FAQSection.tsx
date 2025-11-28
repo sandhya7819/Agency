@@ -131,7 +131,7 @@ export default function FAQSection() {
           <div className="col-12">
             <div className="bg-gradient-quartz-white p-9 pb-4 md-p-7 border-radius-6px overflow-hidden position-relative faq-box">
               {/* FAQ Icon */}
-              <div className="position-absolute right-70px md-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1" style={{ opacity: 0.3 }}>
+              <div className="position-absolute right-70px md-right-20px faq-icon-position w-250px sm-w-180px xs-w-150px opacity-1" style={{ opacity: 0.3 }}>
                 <img
                   alt="FAQ - Website Maintenance & One Time Fix"
                   src="https://cdn-idinh.nitrocdn.com/GkhePegAsmwurGKLRvHrNfXpwduBSrnm/assets/images/optimized/rev-90e4b75/www.aaravinfotech.com/images/demo-corporate-features-faq-icon.png"
@@ -141,18 +141,20 @@ export default function FAQSection() {
                 />
               </div>
 
-              {/* Badge */}
-              <div className="bg-base-color d-inline-block mb-15px fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12">
-                Frequently asked questions
-              </div>
+              {/* Content Wrapper - Centered */}
+              <div className="faq-content-wrapper" style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+                {/* Badge */}
+                <div className="bg-base-color d-inline-block mb-15px fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12">
+                  Frequently asked questions
+                </div>
 
-              {/* Title */}
-              <h3 className="fw-700 text-dark-gray xs-mb-10px ls-minus-1px text-3xl md:text-4xl lg:text-4xl">
-                FAQ - Website Maintenance & One Time Fix
-              </h3>
+                {/* Title */}
+                <h3 className="fw-700 text-dark-gray xs-mb-10px ls-minus-1px text-3xl md:text-4xl lg:text-4xl text-center mb-4">
+                  FAQ - Website Maintenance & One Time Fix
+                </h3>
 
-              {/* Accordion */}
-              <div className="accordion accordion-style-02" id="accordion-style-02">
+                {/* Accordion */}
+                <div className="accordion accordion-style-02" id="accordion-style-02">
                 {faqs.map((faq) => {
                   const isOpen = openItem === faq.id
                   return (
@@ -210,6 +212,7 @@ export default function FAQSection() {
                     </div>
                   )
                 })}
+                </div>
               </div>
             </div>
           </div>
