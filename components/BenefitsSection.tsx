@@ -179,7 +179,7 @@ export default function BenefitsSection() {
                     key={tab.id}
                     className={`tab-nav cursor-pointer py-3 px-4 mb-1 text-lg font-semibold transition-colors rounded ${
                       activeTab === tab.id
-                        ? 'active bg-blue-600 text-white'
+                        ? 'active bg-yellow-500 text-black'
                         : 'text-gray-700 hover:bg-gray-100'
                     }`}
                     onClick={() => handleTabClick(tab.id)}
@@ -240,11 +240,11 @@ export default function BenefitsSection() {
                     )}
 
                     {content.cta && (
-                      <p className="mb-0 pb-0" style={{ color: '#2563eb' }}>
+                      <p className="mb-0 pb-0" style={{ color: '#fbbf24' }}>
                         {'ctaLink' in content && (content as any).ctaLink ? (
                           <em>
                             <strong>{content.cta}</strong>{' '}
-                            <a href="#get_a_quote" className="text-decoration-line-bottom" style={{ color: '#2563eb' }}>
+                            <a href="#get_a_quote" className="text-decoration-line-bottom" style={{ color: '#fbbf24' }}>
                               {(content as any).ctaLink}
                             </a>{' '}
                             above to choose <strong>Monthly Website Maintenance Services</strong> or{' '}
@@ -252,10 +252,10 @@ export default function BenefitsSection() {
                           </em>
                         ) : (
                           <>
-                            <a href="#get_a_quote" className="text-decoration-line-bottom" style={{ color: '#2563eb' }}>
+                            <a href="#get_a_quote" className="text-decoration-line-bottom" style={{ color: '#fbbf24' }}>
                               {content.cta}
                             </a>{' '}
-                            <span style={{ color: '#2563eb' }}>
+                            <span style={{ color: '#fbbf24' }}>
                               {tabId === 'explore1' && 'with Website Maintenance Services'}
                               {tabId === 'explore2' && 'to tune speed and keep it that way'}
                               {tabId === 'explore3' && 'and stop chasing updates'}
@@ -280,11 +280,11 @@ export default function BenefitsSection() {
           <div className="col-auto icon-with-text-style-08">
             <div className="feature-box feature-box-left-icon-middle flex items-center">
               <div className="feature-box-icon me-4">
-                <i className="bi bi-patch-check icon-medium text-3xl" style={{ color: '#2563eb' }}></i>
+                <i className="bi bi-patch-check icon-medium text-3xl" style={{ color: '#fbbf24' }}></i>
               </div>
               <div className="feature-box-content alt-font text-dark-gray text-xl font-semibold">
                 Join 1,000+ Businesses – Secure Your Website with{' '}
-                <a href="#get_a_quote" className="text-decoration-line-bottom" style={{ color: '#2563eb' }}>
+                <a href="#get_a_quote" className="text-decoration-line-bottom" style={{ color: '#fbbf24' }}>
                   Expert Website Maintenance Services
                 </a>
               </div>

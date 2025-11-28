@@ -5,7 +5,7 @@ import { useState } from 'react'
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const logoUrl = 'https://cdn-idinh.nitrocdn.com/GkhePegAsmwurGKLRvHrNfXpwduBSrnm/assets/images/optimized/rev-90e4b75/www.aaravinfotech.com/assets/images/logo-new.png'
+  const logoUrl = 'https://www.spettrovision.com/images/logo.png'
 
   return (
     <header className="">
@@ -15,7 +15,7 @@ export default function Header() {
             <a className="navbar-brand" href="/">
               <img
                 data-at2x="images/logo-black@2x.png"
-                alt="Aarav Infotech Logo"
+                alt="Spettro Vision Logo"
                 src={logoUrl}
                 className="default-logo"
                 decoding="async"
@@ -51,9 +51,9 @@ export default function Header() {
               <a
                 href="#get_a_quote"
                 className="btn btn-small btn-switch-text btn-round-edge text-transform-none btn-box-shadow purchase-envato text-sm xl:text-base px-3 xl:px-4"
-                style={{ backgroundColor: '#2563eb', color: 'white' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+                style={{ backgroundColor: '#fbbf24', color: '#000000' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f59e0b'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#fbbf24'}
               >
                 <span className="relative inline-flex items-center gap-1 xl:gap-2 overflow-hidden text-white">
                   <span className="btn-double-text inline-block transition-transform duration-300 text-white whitespace-nowrap">Request a Quote</span>
@@ -83,7 +83,7 @@ export default function Header() {
                   <a
                     href="#get_a_quote"
                     className="btn btn-small btn-round-edge text-white w-full text-center py-2.5 text-base font-semibold"
-                    style={{ backgroundColor: '#2563eb' }}
+                    style={{ backgroundColor: '#fbbf24', color: '#000000' }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Request a Quote →

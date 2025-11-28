@@ -10,7 +10,7 @@ export default function HeroSection() {
           {/* Left Content - Text */}
           <div className="w-full flex flex-col justify-center order-2 lg:order-1">
             <div className="flex flex-wrap items-center mb-3 md:mb-4">
-              <div className="flex-shrink-0 text-white text-xs uppercase px-3 md:px-4 py-1 md:py-1.5 rounded-full mr-2 md:mr-3 font-semibold" style={{ backgroundColor: '#2563eb' }}>
+              <div className="flex-shrink-0 text-black text-xs uppercase px-3 md:px-4 py-1 md:py-1.5 rounded-full mr-2 md:mr-3 font-semibold" style={{ backgroundColor: '#fbbf24' }}>
                 GET STARTED
               </div>
               <span className="text-xs md:text-sm font-medium text-gray-600">
@@ -22,7 +22,7 @@ export default function HeroSection() {
               Monthly{' '}
               <span className="text-highlight relative">
                 Website Maintenance
-                <span className="absolute bottom-2 md:bottom-3 left-0 right-0 h-2 md:h-3 bg-blue-600 opacity-30"></span>
+                <span className="absolute bottom-2 md:bottom-3 left-0 right-0 h-2 md:h-3 bg-yellow-500 opacity-30"></span>
               </span>{' '}
               with 12-Minute Avg Response.
             </h1>
@@ -43,7 +43,7 @@ export default function HeroSection() {
 
             <p className="text-xs md:text-sm text-gray-600">
               Need urgent help?{' '}
-              <a href="#get_a_quote" className="text-blue-600 font-semibold hover:underline">
+              <a href="#get_a_quote" className="font-semibold hover:underline" style={{ color: '#fbbf24' }}>
                 <strong>Connect us now!</strong>
               </a>
             </p>

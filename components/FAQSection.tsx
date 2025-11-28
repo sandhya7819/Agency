@@ -177,13 +177,13 @@ export default function FAQSection() {
                           data-bs-parent="#accordion-style-02"
                         >
                           <div className="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                            <i className={`feather ${isOpen ? 'icon-feather-minus' : 'icon-feather-plus'} fs-20`} style={{ color: '#2563eb' }}>
+                            <i className={`feather ${isOpen ? 'icon-feather-minus' : 'icon-feather-plus'} fs-20`} style={{ color: '#fbbf24' }}>
                               {isOpen ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                   <line x1="5" y1="12" x2="19" y2="12"></line>
                                 </svg>
                               ) : (
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                   <line x1="12" y1="5" x2="12" y2="19"></line>
                                   <line x1="5" y1="12" x2="19" y2="12"></line>
                                 </svg>

@@ -177,9 +177,9 @@ const steps = [
                   <div
                     className="timeline-node"
                     style={{
-                      backgroundColor: scrollProgress >= index / steps.length ? '#2563eb' : '#e5e7eb',
-                      borderColor: scrollProgress >= index / steps.length ? '#2563eb' : '#d1d5db',
-                      '--node-border-color': scrollProgress >= index / steps.length ? '#2563eb' : '#d1d5db',
+                      backgroundColor: scrollProgress >= index / steps.length ? '#fbbf24' : '#e5e7eb',
+                      borderColor: scrollProgress >= index / steps.length ? '#fbbf24' : '#d1d5db',
+                      '--node-border-color': scrollProgress >= index / steps.length ? '#fbbf24' : '#d1d5db',
                     } as React.CSSProperties & { '--node-border-color': string }}
                   ></div>
 

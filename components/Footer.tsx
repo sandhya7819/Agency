@@ -36,14 +36,16 @@ const trustLogos = [
 ]
 
 export default function Footer() {
+  const logoUrl = 'https://www.spettrovision.com/images/logo.png'
+  const iconUrl = 'https://www.spettrovision.com/images/sv.png'
+  
   return (
     <footer
-      className="bg-very-light-gray background-position-center-top aarav-footer pb-30px"
+      className="background-position-center-top aarav-footer pb-30px"
       style={{
-        backgroundImage:
-          'url(https://cdn-idinh.nitrocdn.com/GkhePegAsmwurGKLRvHrNfXpwduBSrnm/assets/images/optimized/rev-90e4b75/www.aaravinfotech.com/images/demo-marketing-footer-dot.svg)',
         marginTop: '0',
         paddingTop: '180px',
+        backgroundColor: '#000000',
       }}
     >
       <div className="container mx-auto px-4">
@@ -52,11 +54,12 @@ export default function Footer() {
           className="row justify-content-center overlap-section mb-4 ms-0 me-0"
           style={{ marginTop: '-160px' }}
         >
-          <div className="col-auto text-center bg-very-light-gray pt-30px pb-30px ps-7 pe-7 md-ps-4 md-pe-4 sm-mb-15px border border-radius-100px sm-border-radius-6px sm-box-shadow">
+          <div className="col-auto text-center pt-30px pb-30px ps-7 pe-7 md-ps-4 md-pe-4 sm-mb-15px border border-radius-100px sm-border-radius-6px sm-box-shadow" style={{ backgroundColor: '#1a1a1a', borderColor: '#333333' }}>
             <div itemScope itemType="https://schema.org/Product">
               <meta itemProp="name" content="Website Management Service Provider - Aarav Infotech" />
               <div
-                className="trplt-mnwrapr text-dark-gray alt-font"
+                className="trplt-mnwrapr alt-font"
+                style={{ color: '#ffffff' }}
                 itemScope
                 itemType="https://schema.org/AggregateRating"
               >
@@ -87,7 +90,7 @@ export default function Footer() {
                   href="https://bit.ly/33hzurT"
                   target="_blank"
                   rel="nofollow"
-                  style={{ color: '#2563eb', textDecoration: 'underline' }}
+                  style={{ color: '#fbbf24', textDecoration: 'underline' }}
                 >
                   GoogleRate <strong itemProp="ratingValue">4.6</strong>
                 </a>{' '}
@@ -113,9 +116,46 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className="container footer-dark text-center text-sm-start mx-auto px-4">
         <div className="row align-items-center footer-bottom border-top border-color-transparent-white-light pt-30px pb-30px g-0">
-          <div className="col-lg-12 text-center md-mb-10px">
-            <p className="fs-15 mb-0" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-              © 2025. Aarav Infotech India Pvt. Ltd., All Rights Reserved.
+          <div className="col-lg-12">
+            {/* Logo and Icon */}
+            <div className="flex flex-col items-center mb-6 gap-4">
+              <a href="/" className="footer-logo">
+                <img
+                  data-at2x="images/logo-black@2x.png"
+                  alt="Spettro Vision Logo"
+                  src={logoUrl}
+                  className="default-logo footer-logo-img"
+                  decoding="async"
+                  style={{ maxHeight: '80px', width: 'auto', height: 'auto' }}
+                />
+              </a>
+              <img
+                alt="Spettro Vision Icon"
+                src={iconUrl}
+                className="footer-icon-img"
+                decoding="async"
+                style={{ maxHeight: '60px', width: 'auto', height: 'auto' }}
+              />
+            </div>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-4">
+              <a href="#contact" className="footer-link text-sm md:text-base" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                Contact Us
+              </a>
+              <span className="hidden md:inline" style={{ color: 'rgba(255, 255, 255, 0.3)' }}>•</span>
+              <a href="#career" className="footer-link text-sm md:text-base" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                Career
+              </a>
+              <span className="hidden md:inline" style={{ color: 'rgba(255, 255, 255, 0.3)' }}>•</span>
+              <a href="#policies" className="footer-link text-sm md:text-base" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                Policies
+              </a>
+              <span className="hidden md:inline" style={{ color: 'rgba(255, 255, 255, 0.3)' }}>•</span>
+              <a href="#sitemap" className="footer-link text-sm md:text-base" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                Sitemap
+              </a>
+            </div>
+            <p className="fs-15 mb-0 text-center" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+              © 2026 Spettro Vision Pvt. Ltd.
             </p>
           </div>
         </div>
