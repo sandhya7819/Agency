@@ -96,7 +96,17 @@ const steps = [
         // Get the process-content element to calculate line height
         const processContent = section.querySelector('.process-content') as HTMLElement
         if (processContent && lineRef.current) {
-          const contentHeight = processContent.scrollHeight
+          // Get the last step element to calculate proper end position
+          const lastStep = processContent.querySelector('.process-step-item:last-child') as HTMLElement
+          const lineWrap = processContent.querySelector('.line-wrap') as HTMLElement
+          
+          let contentHeight = processContent.scrollHeight
+          if (lastStep && lineWrap) {
+            const lastStepBottom = lastStep.offsetTop + lastStep.offsetHeight
+            const lineWrapTop = lineWrap.offsetTop
+            contentHeight = lastStepBottom - lineWrapTop + 40 // Add extra padding for line extension
+          }
+          
           const currentHeight = contentHeight * progress
           lineRef.current.style.height = `${currentHeight}px`
         }
@@ -109,7 +119,17 @@ const steps = [
         setScrollProgress(1)
         const processContent = section.querySelector('.process-content') as HTMLElement
         if (processContent && lineRef.current) {
-          const contentHeight = processContent.scrollHeight
+          // Get the last step element to calculate proper end position
+          const lastStep = processContent.querySelector('.process-step-item:last-child') as HTMLElement
+          const lineWrap = processContent.querySelector('.line-wrap') as HTMLElement
+          
+          let contentHeight = processContent.scrollHeight
+          if (lastStep && lineWrap) {
+            const lastStepBottom = lastStep.offsetTop + lastStep.offsetHeight
+            const lineWrapTop = lineWrap.offsetTop
+            contentHeight = lastStepBottom - lineWrapTop + 40 // Add extra padding for line extension
+          }
+          
           lineRef.current.style.height = `${contentHeight}px`
         }
       }

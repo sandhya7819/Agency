@@ -36,8 +36,8 @@ const trustLogos = [
 ]
 
 export default function Footer() {
-  const logoUrl = 'https://www.spettrovision.com/images/logo.png'
-  const iconUrl = 'https://www.spettrovision.com/images/sv.png'
+  const logoUrl = '/images/logo-11.jpg'
+  const iconUrl = '/images/sv.png'
   
   return (
     <footer

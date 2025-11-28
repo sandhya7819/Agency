@@ -27,11 +27,12 @@ export default function FlexiTaskSection() {
                   On-Demand Expert Help
                 </span>
                 <p>
-                  Get quick fixes without long-term commitments. Whether it's an emergency security patch or a speed
-                  boost before your big sale, our task-based plans put the right expert on your job within hours.
+                  Get fixes without long-term commitments. Our task-based plans put the expert on your job within hours.
                 </p>
               </div>
-              <div className="feature-box-overlay bg-solitude-blue border-radius-10px"></div>
+              <div className="feature-box-overlay bg-solitude-blue border-radius-10px position-relative overflow-hidden">
+                <i className="bi bi-check-circle-fill position-absolute" style={{ fontSize: '80px', color: 'rgba(251, 191, 36, 0.1)', right: '-20px', bottom: '-20px' }}></i>
+              </div>
             </div>
           </div>
           {/* end features box item */}
@@ -52,7 +53,9 @@ export default function FlexiTaskSection() {
               <span className="position-absolute box-shadow-large top-25px lg-top-15px right-25px lg-right-15px bg-dark-gray border-radius-18px text-white fs-11 fw-700 text-uppercase ps-15px pe-15px lh-26 ls-minus-05px">
                 Popular
               </span>
-              <div className="feature-box-overlay bg-white border-radius-10px"></div>
+              <div className="feature-box-overlay bg-white border-radius-10px position-relative overflow-hidden">
+                <i className="bi bi-star-fill position-absolute" style={{ fontSize: '80px', color: 'rgba(251, 191, 36, 0.1)', right: '-20px', bottom: '-20px' }}></i>
+              </div>
             </div>
           </div>
           {/* end features box item */}
@@ -60,7 +63,7 @@ export default function FlexiTaskSection() {
           <div className="col icon-with-text-style-04 transition-inner-all">
             <div className="feature-box border-radius-10px p-15 lg-pt-15 lg-pb-15 lg-ps-10 lg-pe-10 last-paragraph-no-margin">
               <div className="feature-box-icon">
-                <i className="line-icon-Aim icon-double-large text-base-color mb-25px"></i>
+                <i className="bi bi-briefcase-fill icon-double-large text-base-color mb-25px"></i>
               </div>
               <div className="feature-box-content">
                 <span className="d-inline-block alt-font text-dark-gray fw-700 fs-19 mb-10px">
@@ -71,7 +74,9 @@ export default function FlexiTaskSection() {
                   solutions.
                 </p>
               </div>
-              <div className="feature-box-overlay bg-solitude-blue border-radius-10px"></div>
+              <div className="feature-box-overlay bg-solitude-blue border-radius-10px position-relative overflow-hidden">
+                <i className="bi bi-shield-check-fill position-absolute" style={{ fontSize: '80px', color: 'rgba(251, 191, 36, 0.1)', right: '-20px', bottom: '-20px' }}></i>
+              </div>
             </div>
           </div>
           {/* end features box item */}
