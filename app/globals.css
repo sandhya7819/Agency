@@ -2717,6 +2717,13 @@ html {
   width: 100%;
 }
 
+@media (max-width: 639px) {
+  .my_cta_section .col-xl-8 .flex {
+    justify-content: flex-end !important;
+    padding-right: 1rem !important;
+  }
+}
+
 .my_cta_section::before {
   content: '';
   position: absolute;
@@ -2981,6 +2988,31 @@ html {
   }
 }
 
+@media (max-width: 639px) {
+  .flexitask-title {
+    margin-left: 1.5rem !important;
+    text-align: left !important;
+  }
+  
+  .flexitask-header-content {
+    text-align: left !important;
+  }
+  
+  .flexitask-header-content span {
+    margin-left: 1.5rem !important;
+    display: inline-block !important;
+  }
+  
+  .comparison-header-content .flex {
+    justify-content: flex-end !important;
+    padding-right: 1rem !important;
+  }
+  
+  .comparison-header-content .flex span {
+    text-align: right !important;
+  }
+}
+
 /* FAQ Badge - Shift right 350px */
 .faq-badge {
   margin-left: 350px !important;
@@ -2989,6 +3021,13 @@ html {
 @media (max-width: 991px) {
   .faq-badge {
     margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .faq-badge {
+    margin-left: 1.5rem !important;
+    display: inline-block !important;
   }
 }
 
