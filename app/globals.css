@@ -891,7 +891,8 @@ html {
 
 @media (min-width: 1024px) {
   .section-head {
-    position: relative !important;
+    position: sticky !important;
+    top: 100px !important; /* Stick to top with some offset */
     align-self: flex-start !important;
     margin-bottom: 40px !important;
     height: auto !important;
@@ -3271,11 +3272,13 @@ html {
   }
   
   .navbar-brand {
-    margin-left: 0;
+    margin-left: 30px !important; /* Shift logo to the right */
   }
   
-  .navbar-brand img {
-    max-height: 50px;
+  .navbar-brand img,
+  .navbar-brand .default-logo {
+    max-height: 40px !important; /* Make logo smaller */
+    width: auto;
   }
   
   .navbar-collapse {
@@ -3321,6 +3324,15 @@ html {
 }
 
 @media (max-width: 640px) {
+  .navbar-brand {
+    margin-left: 25px !important; /* Shift logo more to the right on smaller screens */
+  }
+  
+  .navbar-brand img,
+  .navbar-brand .default-logo {
+    max-height: 35px !important; /* Make logo even smaller on very small screens */
+  }
+  
   .hero-bg {
     padding-top: 100px !important;
     padding-bottom: 40px !important;
