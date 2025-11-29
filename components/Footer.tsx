@@ -36,7 +36,7 @@ const trustLogos = [
 ]
 
 export default function Footer() {
-  const logoUrl = '/images/logo-11.jpg'
+  const logoUrl = '/images/logo-11.png'
   const iconUrl = '/images/sv.png'
   
   return (

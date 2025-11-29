@@ -5,7 +5,7 @@ import { useState } from 'react'
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const logoUrl = '/images/logo-11.jpg'
+  const logoUrl = '/images/logo-11.png'
 
   return (
     <header className="">

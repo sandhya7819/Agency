@@ -1134,6 +1134,18 @@ html {
   }
 }
 
+/* Ensure last step has a visible bullet */
+.process-step-item.last-step .timeline-node {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.process-step-item.last-step {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
 .box-title {
   font-size: 20px;
   line-height: 26px;
@@ -1152,9 +1164,9 @@ html {
   .box-title {
     font-size: 24px;
     line-height: 30px;
+    margin-bottom: 5px;
+    color: #232323;
   }
-  margin-bottom: 5px;
-  color: #232323;
 }
 
 .mb-5px {
@@ -2920,11 +2932,14 @@ html {
 .flexitask-header-row {
   margin-left: 290px !important;
   max-width: calc(100% - 290px) !important;
+  margin-top: -40px !important; /* Move header content 40px up */
+  margin-bottom: 40px !important; /* Add 40px gap between header and feature boxes */
 }
 
 .flexitask-header-content {
   max-width: 85% !important;
   margin: 0 auto !important;
+  padding-bottom: 90px;
 }
 
 .flexitask-title {
@@ -2951,6 +2966,23 @@ html {
   align-items: center !important;
   justify-content: center !important;
   line-height: 60px !important;
+}
+
+/* Make hover color permanent and increase height for FlexiTask feature boxes */
+.flexitask-header-section .icon-with-text-style-04 .feature-box {
+  background-color: #fffbeb !important; /* Very light yellow - permanent */
+  padding-bottom: calc(15px + 110px) !important; /* Increase height by 110px (50px + 60px) */
+}
+
+/* Add 40px gap between the 3 feature boxes in FlexiTask section */
+.flexitask-header-section .row.row-cols-1.row-cols-lg-3.row-cols-md-2 {
+  display: grid !important;
+  gap: 40px !important;
+}
+
+/* Move "Start a FlexiTask" section down by 50px */
+.flexitask-header-section .row.mt-3 {
+  margin-top: 50px !important;
 }
 
 @media (max-width: 1200px) {
@@ -3453,6 +3485,18 @@ html {
   .timeline-node::before {
     width: 20px !important;
     height: 20px !important;
+  }
+  
+  /* Ensure last step bullet is visible on mobile */
+  .process-step-item.last-step .timeline-node {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .process-step-item.last-step {
+    padding-bottom: 2rem !important;
+    margin-bottom: 2rem !important;
   }
   
   .number {
